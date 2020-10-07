@@ -7,7 +7,7 @@ services:
       - MARIADB_USER=mariadb_user
       - MARIADB_DATABASE=moodle_elearning
     volumes:
-      - '/application_data/mariadb_data:/bitnami/mariadb'
+      - '/application/application_data/mariadb_data:/bitnami/mariadb'
   moodle:
     image: 'docker.io/bitnami/moodle:3-debian-10'
     ports:
@@ -24,8 +24,8 @@ services:
       - MOODLE_PASSWORD=ThisIsTemp123!!
       - MOODLE_SITE_NAME=StealthEntryELearning
     volumes:
-      - '/application_data/moodle:/bitnami/moodle'
-      - '/application_data/moodledata:/bitnami/moodledata'
+      - '/application/application_data/moodle:/bitnami/moodle'
+      - '/application/application_data/moodledata:/bitnami/moodledata'
     depends_on:
       - mariadb
 volumes:
